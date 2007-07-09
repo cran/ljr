@@ -2,7 +2,7 @@
 \alias{ljr0}
 \title{MLE with 0 joinpoints}
 \description{
-   Determines the maximum likelihood estimator of model coefficients
+   Determines the maximum likelihood estimate of model coefficients
 in the logistic joinpoint regression model with no joinpoints.
 }
 \usage{

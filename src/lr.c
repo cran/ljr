@@ -1,4 +1,5 @@
 #include "ljrlib.h"
+extern int dposv_(char *uplo, int *n, int *nrhs, double *a,int *lda, double *b, int *ldb, int *info);
 void lr(double *y,double *n,double *x,double *ofst,double *b,int N,int m,double *wlik){
   char uplo = 'U';
   int o=1;

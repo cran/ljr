@@ -143,50 +143,11 @@ void ljr1(double *y,double *n,double *tm,double *x,double *ofst,double *beta,dou
 // zlik is the scalar fitted log-likelihood.
 void ljr2(double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
 
-void SeedGenerator(void);
-
 double fmin2(double x, double y);
 
 double fmax2(double x, double y);
 
-/* Modifications made to allow for calling outside R */
-
-/*
- *  Mathlib : A C Library of Special Functions
- *  Copyright (C) 1998 Ross Ihaka
- *  Copyright (C) 2000-2002 The R Development Core Team
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- *  SYNOPSIS
- *
- *	#include <Rmath.h>
- *	double rbinom(double nin, double pp)
- *
- *  DESCRIPTION
- *
- *	Random variates from the binomial distribution.
- *
- *  REFERENCE
- *
- *	Kachitvichyanukul, V. and Schmeiser, B. W. (1988).
- *	Binomial random variate generation.
- *	Communications of the ACM 31, 216-222.
- *	(Algorithm BTPEC).
- */
-double brbinom(int n, double pp);
+void rrbinom(int *nin, double *pin, double *x);
 
 // This function generates binomial random variables according to the logistic
 // joinpoint regression model.

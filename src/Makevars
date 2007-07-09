@@ -1,2 +1,1 @@
-LAPACK_LIBS=/usr/lib/R/modules/lapack.so
 PKG_LIBS=${LAPACK_LIBS}

@@ -2,11 +2,11 @@
 \alias{ljr1}
 \title{MLE with 1 joinpoint}
 \description{
-   Determines the maximum likelihood estimator of model coefficients
+   Determines the maximum likelihood estimates of model coefficients
 in the logistic joinpoint regression model with one joinpoint.
 }
 \usage{
-ljr1(y,n,tm,X,ofst)
+ljr1(y,n,tm,X,ofst,summ=TRUE)
 }
 \arguments{
    \item{y}{the vector of Binomial responses.}
@@ -14,6 +14,7 @@ ljr1(y,n,tm,X,ofst)
    \item{tm}{the vector of ordered observation times.}
    \item{X}{a design matrix containing other covariates.}
    \item{ofst}{a vector of known offsets for the logit of the response.}
+   \item{summ}{a boolean indicator of whether summary tables should be returned.}
 }
 \value{
    \item{Coef}{A table of coefficient estimates.}   

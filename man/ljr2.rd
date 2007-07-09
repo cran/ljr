@@ -2,7 +2,7 @@
 \alias{ljr2}
 \title{MLE with 2 joinpoints}
 \description{
-   Determines the maximum likelihood estimator of model coefficients
+   Determines the maximum likelihood estimates of model coefficients
 in the logistic joinpoint regression model with two joinpoints.
 }
 \usage{

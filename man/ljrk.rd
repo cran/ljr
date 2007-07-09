@@ -2,7 +2,7 @@
 \alias{ljrk}
 \title{MLE with k joinpoints}
 \description{
-   Determines the maximum likelihood estimator of model coefficients
+   Determines the maximum likelihood estimates of model coefficients
 in the logistic joinpoint regression model with k joinpoints.
 }
 \usage{
