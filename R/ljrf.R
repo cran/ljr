@@ -4,6 +4,7 @@ ljrf <- function(y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
  m=ncol(X)
  if (is.null(m)) 
   m=0
+ or.ofst=ofst
  if (length(ofst)==1)
   ofst=as.double(rep(ofst,N))
  else
@@ -30,7 +31,7 @@ as.double(ofst),beta=double(m+1),gamma=double(1),N,m,ans=double(1),PACKAGE="ljr"
    m.variables=NULL
   m.variables=c('Intercept',m.variables)
   t.variables='t'
-  if ((ofst[1]==0)&(length(ofst)==1))
+  if ((or.ofst[1]==0)&(length(or.ofst)==1))
    cat('eta=b0')
   else
    cat('eta=ofst+b0')

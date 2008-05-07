@@ -4,6 +4,7 @@ void rgi(double *tm,int *ti,int *numti,int n){
  for (i=1;i<n;i++)
   if (tm[i]>tm[i-1])
    ti[count++]=i;
- ti[count]=n;
+ if (count<n)
+  ti[count]=n;
  *numti=count;
 }

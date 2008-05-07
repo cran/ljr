@@ -3,6 +3,8 @@ void fillfixed(double *z,double *tm,int *ncps,int *dt,int n,int m,int v,int loc,
  dto=dt[loc];
  dtn=dt[skp];
  dte=dt[upto];
+ if (dte>=n)
+  dte=n-1;
  if (dtn<dto){
   a=n*(m+v+2*(ncps[1]==0)+2*ncps[1]-1)+dtn;
   for (i=dtn;i<dto;i++)

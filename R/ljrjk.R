@@ -4,6 +4,7 @@ ljrjk <- function(j,k,y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
  m=ncol(X)
  if (is.null(m)) 
   m=0
+ or.ofst=ofst
  if (length(ofst)==1)
   ofst=as.double(rep(ofst,N))
  else
@@ -40,7 +41,7 @@ ljrjk <- function(j,k,y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
   if (length(out2$tau)>0)
    for (i in 1:length(out2$tau))
     t.variables=c(t.variables,paste('max(t-tau',i,',0)',sep=""))
-  if ((ofst[1]==0)&(length(ofst)==1))
+  if ((or.ofst[1]==0)&(length(or.ofst)==1))
    cat('eta=b0')
   else
    cat('eta=ofst+b0')
@@ -74,7 +75,7 @@ ljrjk <- function(j,k,y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
   t.variables='t'
   for (i in 1:length(out2$tau))
    t.variables=c(t.variables,paste('max(t-tau',i,',0)',sep=""))
-  if ((ofst[1]==0)&(length(ofst)==1))
+  if ((or.ofst[1]==0)&(length(or.ofst)==1))
    cat('eta=b0')
   else
    cat('eta=ofst+b0')

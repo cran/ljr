@@ -4,6 +4,7 @@ ljr0 <- function(y,n,tm,X=NULL,ofst=0)
    m=ncol(X)
    if (is.null(m)) 
     m=0
+   or.ofst=ofst
    if (length(ofst)==1)
     ofst=as.double(rep(ofst,N))
    else
@@ -21,7 +22,7 @@ ljr0 <- function(y,n,tm,X=NULL,ofst=0)
     m.variables=NULL
    m.variables=c('Intercept',m.variables)
    t.variables='t'
-   if ((ofst[1]==0)&(length(ofst)==1))
+   if ((or.ofst[1]==0)&(length(or.ofst)==1))
     cat('eta=b0')
    else
     cat('eta=ofst+b0')

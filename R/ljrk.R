@@ -2,6 +2,7 @@ ljrk <- function(k,y,n,tm,X=NULL,ofst=0)
 {
   N=length(y)
   m=ncol(X)
+  or.ofst=ofst
   if (is.null(m))
     m=0
   if (k>N-2)
@@ -27,7 +28,7 @@ ljrk <- function(k,y,n,tm,X=NULL,ofst=0)
    if (length(out$tau)>0)
     for (i in 1:length(out$tau))
      t.variables=c(t.variables,paste('max(t-tau',i,',0)',sep=""))
-   if ((ofst[1]==0)&(length(ofst)==1))
+   if ((or.ofst[1]==0)&(length(or.ofst)==1))
     cat('eta=b0')
    else
     cat('eta=ofst+b0')
