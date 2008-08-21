@@ -18,11 +18,11 @@ void test01(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,int 
  b0=malloc((m+1)*sizeof(double));
  b=malloc((m+1)*sizeof(double));
  simy=malloc(N*sizeof(double));
-// estimate parameters for null model and computes observed LRT
+/* estimate parameters for null model and computes observed LRT */
  ljr0(y,n,tm,x,ofst,b0,g0,&N,&m,&lik0);
  ljr1(y,n,tm,x,ofst,b,g,tau,&N,&m,&lik1);
  obslambda=lik1-lik0;
-// estimates p-value via Monte Carlo
+/* estimates p-value via Monte Carlo */
  for (i=0;i<R;i++){
   rgy(b0,g0,tau,n,tm,x,ofst,simy,N,m,0);
   ljr0(simy,n,tm,x,ofst,b,g,&N,&m,&lik0);

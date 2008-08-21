@@ -44,7 +44,7 @@ The software is maintained by Ryan Gill \email{rsgill01@louisville.edu}.
  x1=round(runif(N,-0.5,9.5))
  x2=round(runif(N,-0.5,9.5))
  X=cbind(x1,x2)
- n=rep(1e9,N)
+ n=rep(10000,N)
  tm=c(1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10)
  eta=ofst+beta[1]+gamma[1]*tm
  if (m>0)

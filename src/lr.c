@@ -27,7 +27,7 @@ void lr(double *y,double *n,double *x,double *ofst,double *b,int N,int m,double 
   tx=malloc(N*m*sizeof(double));
   xwx=malloc(m*m*sizeof(double));
 
-// Pick starting point by performing linear regression on the logit.
+/* Pick starting point by performing linear regression on the logit. */
   rt(x,tx,N,m);
   rem(y,n,p,N);
   rny(p,eta,N);
@@ -40,7 +40,7 @@ void lr(double *y,double *n,double *x,double *ofst,double *b,int N,int m,double 
   dposv_(&uplo,&m,&o,xwx,&m,b,&m,&info);
   *diff=ep+1;
 
-// Iterative re-weighted least squares procedure.
+/* Iterative re-weighted least squares procedure. */
   while ((*diff>ep)&(count<maxit)){
    rmv(tx,b,eta,N,m);
    radd(eta,ofst,N);
@@ -55,8 +55,8 @@ void lr(double *y,double *n,double *x,double *ofst,double *b,int N,int m,double 
    count++;
   }
 
-// If the above algorithm does not converge, revert to 
-// an iterative grid search to choose the starting point.
+/* If the above algorithm does not converge, revert to 
+ an iterative grid search to choose the starting point. */
   if (*diff>ep){
    double oldcoef;
    double tempb[m];
@@ -115,7 +115,7 @@ void lr(double *y,double *n,double *x,double *ofst,double *b,int N,int m,double 
     }
    }
 
-// Iterative re-weighted least squares procedure.
+/* Iterative re-weighted least squares procedure. */
    *diff=ep+1;   
    count=1;
    while ((*diff>ep)&(count<maxit)){

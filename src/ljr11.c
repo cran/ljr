@@ -22,7 +22,7 @@ void ljr11(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,int *
  simy=malloc(N*sizeof(double));
  xx=malloc(N*m*sizeof(double));
 
-// estimate parameters for null model and compute observed LRTs
+/* estimate parameters for null model and compute observed LRTs */
  for (i=0;i<m;i++){
   count=0;
   for (k=0;k<m*N;k++)

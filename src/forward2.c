@@ -25,10 +25,10 @@ void forward2(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,in
  b1=malloc((m+1)*sizeof(double));
  b=malloc((m+1)*sizeof(double));
  simy=malloc(N*sizeof(double)); 
-// estimate parameters for null model and computes observed LRTs
+/* estimate parameters for null model and computes observed LRTs */
  ljr0(y,n,tm,x,ofst,b0,g0,&N,&m,&lik0);
  ljr1(y,n,tm,x,ofst,b1,g1,tau1,&N,&m,&liko1);
-// Test 0 vs 1.
+/* Test 0 vs 1. */
  nulls[0]=0;
  alts[0]=1;
  obs=liko1-lik0;
@@ -41,11 +41,11 @@ void forward2(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,in
    count++;
  }
  p[0]=count/(R+0.0);
-// If 0 vs 1 is not rejected, then use 0 joinpoints.
+/* If 0 vs 1 is not rejected, then use 0 joinpoints. */
  if (p[0]>alpha/2)
   nulls[2]=0;
  else{
-// If 0 vs 1 is rejected, then test 1 vs 2.
+/* If 0 vs 1 is rejected, then test 1 vs 2. */
   count=0;
   nulls[1]=1;
   alts[1]=2;
@@ -60,7 +60,7 @@ void forward2(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,in
     count++;
  }
   p[1]=count/(R+0.0);
-// If 1 vs 2 is not rejected, then use 1 joinpoint.  Otherwise use 2.
+/* If 1 vs 2 is not rejected, then use 1 joinpoint.  Otherwise use 2. */
   if (p[1]>alpha/2)
    nulls[2]=1;
   else
