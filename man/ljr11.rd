@@ -26,7 +26,7 @@ The authors are Michal Czajkowski, Ryan Gill, and Greg Rempala.
 The software is maintained by Ryan Gill \email{rsgill01@louisville.edu}.
 }
 \references{ 
- Czajkowski, M., Gill, R. and Rempala, G. (2008). Model selection in logistic joinpoint regression with applications to analyzing cohort mortality patterns. {\emph Statistics in Medicine} 27, 1508-1526.
+ Czajkowski, M., Gill, R. and Rempala, G. (2008). Model selection in logistic joinpoint regression with applications to analyzing cohort mortality patterns. \emph{Statistics in Medicine} 27, 1508-1526.
 }
 \seealso{
  \code{\link{ljr1}}
