@@ -1,5 +1,5 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
+useDynLib(ljr)
 
-# Export all names
-exportPattern(".")
+export(
+ljr0,ljr01,ljr1,ljr11,ljrb,ljrf,ljrjk,ljrk,ljrkk
+)

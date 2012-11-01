@@ -1,6 +1,5 @@
-7df90718f650d2daab75d265bebc5000 *DESCRIPTION
-9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
-97a450e0c380df3f821f12f01c4488be *R/firstlib.R
+b4323c4c2c35e5524469f318df4f4772 *DESCRIPTION
+87f9aad1933c435c9ecae08453f4ae5e *NAMESPACE
 cc3435e277b3f47251f582789f020814 *R/ljr0.R
 795eb4fa90ce581a85be6dec9e58c530 *R/ljr01.R
 30890e52bc02b4a979402abc532b6998 *R/ljr1.R
@@ -10,7 +9,8 @@ c4ee3711ffe3eb63b6d937d5afa34908 *R/ljr11.R
 e315b8cba543d2799a1a86cda7aadef5 *R/ljrjk.R
 46fd93984ce738da0aa35a8985de7895 *R/ljrk.R
 5d8e30d56dcfa9632db92a84a9a44c37 *R/ljrkk.R
-d789b9a009ea32458daeaef766a58f96 *data/kcm.txt
+1cf976d5ccf6ab81b09bc012aa02a890 *R/onAttach.R
+009d28164494d9069523ccaebdf5cc56 *data/kcm.txt.gz
 6bcfacfca949dc7bf1a6341d83f405c4 *man/kcm.rd
 172528a681e69d5bac4a134b64da25d7 *man/ljr0.rd
 bd795e71292551ad8ccacf541c532d9c *man/ljr01.rd
