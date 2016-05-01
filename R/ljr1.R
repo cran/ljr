@@ -1,5 +1,21 @@
 ljr1 <- function(y,n,tm,X=NULL,ofst=0,summ=TRUE)
 {
+  if (sum(duplicated(tm))>0){
+   cat("Error: duplicated observation times\n")  
+  }
+  else{
+   if ((is.null(X)==FALSE)&&(is.matrix(X)==FALSE))
+    X=as.matrix(X)
+   if (is.unsorted(tm)==TRUE){
+    o=order(tm)
+    y=y[o]
+    n=n[o]
+    tm=tm[o]
+    if (is.null(X)==FALSE)
+     X=as.matrix(X[o,])
+    if ((length(ofst)>1)||(ofst[1]!=0))
+     ofst=ofst[o]
+   }
    N=length(y)
    if (is.null(X)) 
     m=0
@@ -57,4 +73,5 @@ ljr1 <- function(y,n,tm,X=NULL,ofst=0,summ=TRUE)
    ret2=out$tau
    names(ret2)=j.labels
    return(list(Coef=ret1,Joinpoint=ret2,wlik=out$ans))
+  }
 }

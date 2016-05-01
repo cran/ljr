@@ -40,6 +40,6 @@ The software is maintained by Ryan Gill \email{rsgill01@louisville.edu}.
  data(kcm)
  attach(kcm) 
  set.seed(12345)
- ljrb(1,Count,Population,Year+.5,R=20)
+## Not run: ljrb(1,Count,Population,Year+.5,R=20)
 }
 \keyword{nonlinear}

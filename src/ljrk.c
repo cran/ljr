@@ -4,7 +4,7 @@ void ljrk(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,double
  int N=*Nptr;
  int m=*mptr;
 
- if (k>0){
+ if (k>1){
   int i;
   int ncps[2]={k,0};
   int ndt[1];
@@ -74,7 +74,7 @@ void ljrk(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,double
       while ((nojpinint==0)&(i<ncps[1])){
        if (b[m+1+2*i]!=b[m+3+2*i]){
         temptau[i]=(b[m+2+2*i]-b[m+2*i])/(b[m+1+2*i]-b[m+3+2*i]);
-}
+       }
        else
         nojpinint=1;
        i++;
@@ -110,6 +110,11 @@ void ljrk(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,double
   free(ik);
  }
  else{
-  ljr0(y,n,tm,x,ofst,beta,gamma,&N,&m,zlik);
+  if (k==1){
+   ljr1(y,n,tm,x,ofst,beta,gamma,tau,&N,&m,zlik);
+  }
+  else{
+   ljr0(y,n,tm,x,ofst,beta,gamma,&N,&m,zlik);
+  }
  }
 }

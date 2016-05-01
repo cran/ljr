@@ -48,7 +48,16 @@ void ljrkk(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,int *
   p[i]=count/(R+0.0);
  }
  count=0;
+//iprpm('k',&k,1,1);
+//prpm('y',y,N,1);
+//prpm('n',n,N,1);
+//prpm('t',tm,N,1);
+//prpm('o',ofst,N,1);
  ljrkrmint(&k,y,n,tm,x,ofst,b0,g0,tau0,&N,&m,&liko0);
+//prpm('b',b0,m+1,1);
+//prpm('g',g0,k+1,1);
+//prpm('l',&liko0,1,1);
+
  ljrk(&k,y,n,tm,x,ofst,b,g,tau,&N,&m,&liko1);
  obs=liko1-liko0;
  for (j=0;j<R;j++){

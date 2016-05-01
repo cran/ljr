@@ -1,5 +1,21 @@
 ljrjk <- function(j,k,y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
 {
+if (sum(duplicated(tm))>0){
+ cat("Error: duplicated observation times\n")  
+}
+else{
+ if ((is.null(X)==FALSE)&&(is.matrix(X)==FALSE))
+  X=as.matrix(X)
+ if (is.unsorted(tm)==TRUE){
+  o=order(tm)
+  y=y[o]
+  n=n[o]
+  tm=tm[o]
+  if (is.null(X)==FALSE)
+   X=as.matrix(X[o,])
+  if ((length(ofst)>1)||(ofst[1]!=0))
+   ofst=ofst[o]
+ }
  N=length(y)
  m=ncol(X)
  if (is.null(m)) 
@@ -105,4 +121,5 @@ ljrjk <- function(j,k,y,n,tm,X=NULL,ofst=0,R=1000,alpha=0.05)
   names(ret2)=j.labels
   return(list(Coef=ret1,Joinpoint=ret2,wlik=out2$ans,pval=out1$p))
  }
+}
 }

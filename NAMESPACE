@@ -1,5 +1,5 @@
 useDynLib(ljr)
 
 export(
-ljr0,ljr01,ljr1,ljr11,ljrb,ljrf,ljrjk,ljrk,ljrkk
+ljr0,ljr1,ljr01,ljr11,ljrk,ljrjk,ljrkk,ljrb,ljrf
 )

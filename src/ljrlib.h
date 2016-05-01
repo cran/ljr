@@ -130,19 +130,6 @@ void ljr0(double *y,double *n,double *tm,double *x,double *ofst,double *beta,dou
  zlik is the scalar fitted log-likelihood. */
 void ljr1(double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
 
-/* Fits logistic joinpoint regression with 2 joinpoints.
- y is the N-dimensional vector of binomial responses.
- n is the N-dimensional vector of sizes.
- tm is the N-dimensional vector of observation times.
- x is the m-by-N matrix of explanatory variables, stored by row.
- ofst is the N-dimensional vector of offsets.
- beta is the (m+1)-dimensional vector of coefficient estimates computed 
- by the algorithm.
- gamma is the estimate of the coefficient for the term with the times.
- tau contains the estimates of the joinpoints.
- zlik is the scalar fitted log-likelihood. */
-void ljr2(double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
-
 double fmin2(double x, double y);
 
 double fmax2(double x, double y);
@@ -174,41 +161,11 @@ void rgy(double *beta,double *gamma,double *tau,double *n,double *tm,double *x,d
  p is the p-value returned by the function. */
 void test01(double *y,double *n,double *tm,double *x,double *ofst,int *N,int *m,int *R,double *p);
 
-/* This function performs the backward algorithm for logistic regression.
- y is the N-dimensional vector of binomial responses.
- n is the N-dimensional vector of sizes.
- tm is the N-dimensional vector of observation times.
- x is the m-by-N matrix of explanatory variables, stored by row.
- ofst is the N-dimensional vector of offsets.
- R is the number of Monte Carlo simulations for each test.
- p is the vector of p-values for the tests.
- alpha is the size of each test.
- nulls is the number of joinpoints under the null hypotheses.
- alts is the number of joinpoints under the alt hypotheses. */
-void backward2(double *y,double *n,double *tm,double *x,double *ofst,int *N,int *m,int *R,double *p,double *alpha,int *nulls,int *alts);
-
-/* This function performs the forward algorithm for logistic regression.
- y is the N-dimensional vector of binomial responses.
- n is the N-dimensional vector of sizes.
- tm is the N-dimensional vector of observation times.
- x is the m-by-N matrix of explanatory variables, stored by row.
- ofst is the N-dimensional vector of offsets.
- R is the number of Monte Carlo simulations for each test.
- p is the vector of p-values for the tests.
- alpha is the size of each test.
- nulls is the number of joinpoints under the null hypotheses.
- alts is the number of joinpoints under the alt hypotheses. */
-void forward2(double *y,double *n,double *tm,double *x,double *ofst,int *N,int *m,int *R,double *p,double *alpha,int *nulls,int *alts);
-
 void rgi(double *tm,int *ti,int *numti,int n);
 
 void mvfixed(double *z,double *tm,int *ncps,int *dt,int n,int m,int v,int loc);
 
 void mvfree(double *z,double *tm,int *dt,int n,int m,int v,int loc);
-
-void fillfixed(double *z,double *tm,int *ncps,int *dt,int n,int m,int v,int loc,int skp,int upto);
-
-void fillfree(double *z,double *tm,int *ncps,int *dt,int n,int m,int *ifree);
 
 /* Removes the kth row of an p-by-N matrix z. */
 void rzrmrow(double *z,int k,int N,int p);
@@ -229,23 +186,6 @@ void ljr1rmtm(double *y,double *n,double *tm,double *x,double *ofst,double *beta
 
 void ljr11(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,int *mptr,int *Rptr,double *p);
 
-void fillfixedrm(double *z,double *tm,int *ncps,int *dt,int n,int m,int v,int loc,int skp
-,int upto);
-
-void fillfreermint(double *z,double *tm,int *ncps,int *dt,int n,int m,int *ifree);
-
-void fillfreermtm(double *z,double *tm,int *ncps,int *dt,int n,int m,int *ifree);
-
-void ljr2rmint(double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
-
-void ljr2rmtm(double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
-
-void ljr22(double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,int *mptr,int *Rptr,double *p);
-
-void test02(double *y,double *n,double *tm,double *x,double *ofst,int *N,int *m,int *R,double *p);
-
-void test12(double *y,double *n,double *tm,double *x,double *ofst,int *N,int *m,int *R,double *p);
-
 int checkseq(int *x,int M,int k,int *numfixed);
 
 void srz(int *ik,int *dt,int *ifixed,int *ifree,int *ncps,int k,int M,int nfixed);
@@ -263,3 +203,6 @@ void ljrkrmint(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,d
 void ljrkrmtm(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,double *beta,double *gamma,double *tau,int *Nptr,int *mptr,double *zlik);
 
 void ljrkk(int *kptr,double *y,double *n,double *tm,double *x,double *ofst,int *Nptr,int *mptr,int *Rptr,double *p);
+
+void prpm(char name, double *A, int m, int n);
+void iprpm(char name, int *A, int m, int n);

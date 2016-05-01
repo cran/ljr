@@ -1,4 +1,4 @@
 .onAttach=function(lib,pkg)
 {
- packageStartupMessage("ljr 1.3-0 loaded")
+ packageStartupMessage("ljr 1.4-0 loaded")
 }

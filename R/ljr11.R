@@ -1,5 +1,21 @@
 ljr11 <- function(y,n,tm,X=NULL,ofst=0,R=1000)
 {
+if (sum(duplicated(tm))>0){
+ cat("Error: duplicated observation times\n")  
+}
+else{
+ if ((is.null(X)==FALSE)&&(is.matrix(X)==FALSE))
+  X=as.matrix(X)
+ if (is.unsorted(tm)==TRUE){
+  o=order(tm)
+  y=y[o]
+  n=n[o]
+  tm=tm[o]
+  if (is.null(X)==FALSE)
+   X=as.matrix(X[o,])
+  if ((length(ofst)>1)||(ofst[1]!=0))
+   ofst=ofst[o]
+ }
  N=length(y)
  m=ncol(X)
  if (is.null(m)) 
@@ -38,4 +54,5 @@ ljr11 <- function(y,n,tm,X=NULL,ofst=0,R=1000)
   f1=data.frame(Variables=c('Intercept','tm'),p.values=out$p)
  print(f1)
  return(list(pvals=out$p))
+}
 }
